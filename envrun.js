@@ -1,3 +1,5 @@
+#! /usr/local/bin/node
+
 var Firebase = require("firebase"),
 	MaggieBase = new Firebase("https://ebay.firebaseio-demo.com/"),
 	MachineRegistrationBase = MaggieBase.child("machines"),
