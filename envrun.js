@@ -5,6 +5,8 @@ var Firebase = require("firebase"),
 	$HOSTNAME = process.env.hasOwnProperty("INSTANCE_ID") ? process.env.INSTANCE_ID : process.env.HOSTNAME,
 	debugBase = MachineRegistrationBase.child($HOSTNAME);
 
+console.log("Please fuck my ass, daddy.");
+
 machineIsLive.on("value", function(snap) {
 	var isConnected = snap.val();
 	if (isConnected) {
