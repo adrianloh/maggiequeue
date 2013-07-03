@@ -1,0 +1,3 @@
+#! /bin/bash
+
+nuke -t /Users/adrianloh/Desktop/MaggieQueue/fakeRender.py $* --

@@ -1,0 +1,85 @@
+#! /Applications/Nuke7.0v8/NukeX7.0v8.app/../Nuke7.0v8.app/Contents/MacOS/Nuke7.0v8 -nx
+version 7.0 v8
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="0" y="22" w="1920" h="1135" screen="0">
+        <splitter orientation="1">
+            <split size="2135"/>
+            <splitter orientation="2">
+                <split size="599"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="510"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="421"/>
+            <dock id="" activePageId="Script Editor.1">
+                <page id="Script Editor.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /Users/adrianloh/Desktop/MaggieQueue/graphs.nk
+ frame 100
+ format "2048 1024 0 0 2048 1024 1 RED_2K"
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ addUserKnob {20 User}
+ addUserKnob {22 revealPath l " Reveal file " -STARTLINE T nuke.revealFile(nuke.root().name())}
+ addUserKnob {22 publishVr l "Publish version" -STARTLINE T nuke.createShotgunVersion()}
+ addUserKnob {22 updateSGStatus l "Update status" -STARTLINE T nuke.updateShotgunStatus()}
+}
+Viewer {
+ inputs 0
+ frame 100
+ input_process false
+ name Viewer1
+ xpos -40
+ ypos -9
+}
+Transform {
+ inputs 0
+ scale {{curve x1 37.54658604 s0 t0.2099999934 C k x38 38.13009262 s-0.01999999955 l x44.99042511 141.6711426 s0.1485447437 S x51 37.99832535 s0.3600000143 x110 40.80265713 s0.01499999966 C x118.3066101 84.74501038 s0.4456341863 S x124 40.83988094 s-0 x136 40.81101419 C x146 78.89488031 s-0.05941787735 S x159 40.80025239 x163 40.81101419 C x173 100.8384896 S x192 36.97304535 s0.2199999988 x272 6.995991707 s0.04500000179}}
+ center {1024 512}
+ name slowBurn
+ tile_color 0xff
+ gl_color 0xae6377ff
+ xpos -390
+ ypos -45
+}
+Transform {
+ inputs 0
+ scale {{curve x1 14.73792267 s0 t0.2099999934 C k x38 4.184249878 s-0.01999999955 L x44.99042511 24.78554726 s4.430610657 t0.1000000015 C k x56 25.28352737 s0.05999999866 t-0.05999999866 x57.76715469 37.58155823 s-1.799999952 L x63 4.052482605 s-20 t0.07186788321 S x110 6.856814387 s0.01499999966 C x118.3066101 45.38173676 s0.01999999955 x138 45.70924223 s-0.05999999866 t1.697938561 L x140 53.57554245 s5.050755978 t0.01499999966 x153 53.53110123 s-0.01262783259 t-0.6399999857 C x155 45.72641889 s0.1000000015 t-0.01999999955 x173 45.20332718 s-0.05000000075 S x214 26.26329803 s0.01999999955 x272 6.995991707 s0.04500000179}}
+ center {1024 512}
+ name majorHeavy
+ tile_color 0x233282ff
+ gl_color 0xae6377ff
+ xpos -218
+ ypos -114
+}
+Transform {
+ inputs 0
+ scale {{curve x-3 2.902909279 s0 t0.6100000143 x70 7.048907282 s0.03200000152 C x98.30661011 24.58805084 s0 S x135.3066101 7.086131092 s-0 x193 14.60092163 s0.004999999888 x317 -0.1341934204 s-0.2660000026 t-0.3050000072}}
+ center {1024 512}
+ name fastBurn
+ xpos -491
+ ypos -115
+}
+Transform {
+ inputs 0
+ scale {{curve x1 3.600743294 s0 t0.2099999934 C k x38 4.184249878 s-0.01999999955 l x44.99042511 24.78554726 s0.05000000075 S x51 4.052482605 s0.3600000143 x110 6.856814387 s0.01499999966 C x118.3066101 18.46527863 s0.150000006 S x124 6.894038197 s-0 x136 6.865171451 C x146 27.37968444 s-0.01999999955 S x159 6.854409646 x163 6.865171451 C x173 34.76588058 S x192 3.027202606 s0.2199999988 x272 6.995991707 s0.04500000179}}
+ center {1024 512}
+ name threeSpikes
+ tile_color 0x233282ff
+ gl_color 0xae6377ff
+ xpos -345
+ ypos -115
+}
