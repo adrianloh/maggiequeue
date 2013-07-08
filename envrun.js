@@ -21,3 +21,8 @@ machineIsLive.on("value", function(snap) {
 		debugBase.onDisconnect().remove();
 	}
 });
+
+process.on('exit', function() {
+	debugBase.remove();
+	process.exit();
+});
