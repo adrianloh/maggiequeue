@@ -1,7 +1,7 @@
 #! /usr/local/bin/node
 
 var Firebase = require("firebase"),
-	MaggieBase = new Firebase("https://ebay.firebaseio-demo.com/"),
+	MaggieBase = new Firebase("https://badabing.firebaseio-demo.com/"),
 	MachineRegistrationBase = MaggieBase.child("machines"),
 	machineIsLive = MaggieBase.child(".info").child("connected"),
 	$HOSTNAME = process.env.hasOwnProperty("INSTANCE_ID") ? process.env.INSTANCE_ID : process.env.HOSTNAME,

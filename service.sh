@@ -16,7 +16,7 @@ case $1 in
            echo OK
             ;;
         stop)
-			pkill node
+			ps | grep js | awk '{print "kill -9 "$1}' | bash
 			rm -R /tmp/maggieq
             ;;
 esac
